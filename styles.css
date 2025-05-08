@@ -1,8 +1,13 @@
 body {
     display: flex;
     flex-direction: column;
-
     align-items: center;
+
+    font-family: "Consolas", monospace;
+}
+
+button {
+    font-family: inherit;
 }
 
 #display {
@@ -16,4 +21,8 @@ body {
     
 
     border: 2px black solid;
+}
+
+#controls-container {
+    display: flex;
 }

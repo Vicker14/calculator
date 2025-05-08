@@ -41,3 +41,5 @@ numbers.forEach((number) => {
 })
 
 clear.addEventListener("click", () => {display.textContent = ""})
+
+
