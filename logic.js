@@ -37,11 +37,17 @@ const clear = document.querySelector("#clear");
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
+        if (equalsPress == true) {
+            display.textContent = "";
+            equalsPress = false;
+        }
         display.textContent += number.textContent;
     })
 })
 
 let newOperationPossible = true;
+let equalsPress = false;
+
 
 clear.addEventListener("click", () => {
     display.textContent = "";
@@ -54,6 +60,7 @@ operators.forEach((operation) => {
             display.textContent += operation.textContent;
             operator = operation.textContent;
             newOperationPossible = false;
+            equalsPress = false;
         }
     })
 })
@@ -62,4 +69,5 @@ result.addEventListener("click", () => {
     let ecuation = display.textContent.split(operator);
     display.textContent = operate(ecuation[0], ecuation[1], operator);
     newOperationPossible = true;
+    equalsPress = true;
 })
