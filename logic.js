@@ -27,3 +27,17 @@ function operate(number1, number2, operator) {
         result = divide(number1, number2);
     } else return "ERROR";
 }
+
+const display = document.querySelector("#display");
+const numbers = document.querySelectorAll(".number");
+const operations = document.querySelectorAll(".operation");
+const result = document.querySelector("#equ");
+const clear = document.querySelector("#clear");
+
+numbers.forEach((number) => {
+    number.addEventListener("click", () => {
+        display.textContent += number.textContent;
+    })
+})
+
+clear.addEventListener("click", () => {display.textContent = ""})
