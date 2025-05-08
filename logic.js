@@ -26,6 +26,7 @@ function operate(number1, number2, operator) {
     } else if (operator == "/") {
         result = divide(number1, number2);
     } else return "ERROR";
+    return result;
 }
 
 const display = document.querySelector("#display");
@@ -40,9 +41,12 @@ numbers.forEach((number) => {
     })
 })
 
-clear.addEventListener("click", () => {display.textContent = ""})
-
 let newOperationPossible = true;
+
+clear.addEventListener("click", () => {
+    display.textContent = "";
+    newOperationPossible = true;
+});
 
 operators.forEach((operation) => {
     operation.addEventListener("click", () => {
@@ -52,4 +56,10 @@ operators.forEach((operation) => {
             newOperationPossible = false;
         }
     })
+})
+
+result.addEventListener("click", () => {
+    let ecuation = display.textContent.split(operator);
+    display.textContent = operate(ecuation[0], ecuation[1], operator);
+    newOperationPossible = true;
 })
