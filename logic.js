@@ -30,7 +30,7 @@ function operate(number1, number2, operator) {
 
 const display = document.querySelector("#display");
 const numbers = document.querySelectorAll(".number");
-const operations = document.querySelectorAll(".operation");
+const operators = document.querySelectorAll(".operation");
 const result = document.querySelector("#equ");
 const clear = document.querySelector("#clear");
 
@@ -42,4 +42,14 @@ numbers.forEach((number) => {
 
 clear.addEventListener("click", () => {display.textContent = ""})
 
+let newOperationPossible = true;
 
+operators.forEach((operation) => {
+    operation.addEventListener("click", () => {
+        if (newOperationPossible && display.textContent != '') {
+            display.textContent += operation.textContent;
+            operator = operation.textContent;
+            newOperationPossible = false;
+        }
+    })
+})
