@@ -46,11 +46,27 @@ numbers.forEach((number) => {
         }
         display.textContent += number.textContent;
     })
+
+    number.addEventListener("mouseover", () => {
+        number.style.backgroundColor = "#FAF6E9";
+    });
+
+    number.addEventListener("mouseout", () => {
+        number.style.backgroundColor = "";
+    });
 })
 
 clear.addEventListener("click", () => {
     display.textContent = "";
     newOperationPossible = true;
+});
+
+clear.addEventListener("mouseover", () => {
+    clear.style.backgroundColor = "#FAF6E9";
+});
+
+clear.addEventListener("mouseout", () => {
+    clear.style.backgroundColor = "";
 });
 
 operators.forEach((operation) => {
@@ -62,6 +78,14 @@ operators.forEach((operation) => {
             equalsPress = false;
         }
     })
+
+    operation.addEventListener("mouseover", () => {
+        operation.style.backgroundColor = "#FAF6E9";
+    });
+
+    operation.addEventListener("mouseout", () => {
+        operation.style.backgroundColor = "";
+    });
 });
 
 result.addEventListener("click", () => {
@@ -70,4 +94,12 @@ result.addEventListener("click", () => {
     display.textContent = result % 1 === 0 ? result : parseFloat(result).toFixed(4).replace(/\.?0+$/, '');
     newOperationPossible = true;
     equalsPress = true;
+});
+
+result.addEventListener("mouseover", () => {
+    result.style.backgroundColor = "#FAF6E9";
+});
+
+result.addEventListener("mouseout", () => {
+    result.style.backgroundColor = "";
 });

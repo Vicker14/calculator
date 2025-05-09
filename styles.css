@@ -4,6 +4,7 @@ body {
     align-items: center;
 
     font-family: "Consolas", monospace;
+    background-color: #FFFDF6;
 }
 
 button {
@@ -11,13 +12,13 @@ button {
 }
 
 #display {
-    width: 300px;
+    width: 120px;
     height: 1.5em;
 
     display: flex;
     justify-content: end;
     align-items: end;
-    margin: 20px 0px;
+    margin: 10px 0px;
     
 
     border: 2px black solid;
@@ -25,4 +26,68 @@ button {
 
 #controls-container {
     display: flex;
+    flex-direction: column;
+}
+
+#number-operator-block {
+    display: flex;
+    margin-bottom: 10px;
+
+    border: black solid 1px;
+}
+
+#numbers-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    height: 120px;
+    width: 90px;
+}
+
+#numbers-block > button {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    background-color: #DDEB9D;
+}
+
+#operations-block {
+    display: flex;
+    flex-wrap: wrap;
+
+    height: 120px;
+    width: 30px;
+}
+
+#operations-block > button {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    background-color: #A0C878;
+}
+
+#final {
+    display: flex;
+
+    height: 30px;
+    width: 120px;
+
+    border: black solid 1px;
+}
+
+#final > #equ {
+    flex-grow: 3;
+
+    border: none;
+    background-color: #A0C878;
+}
+
+#final > #clear {
+    flex-grow: 1;
+
+    border: none;
+    background-color: #A0C878;
 }
