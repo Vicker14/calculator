@@ -35,6 +35,9 @@ const operators = document.querySelectorAll(".operation");
 const result = document.querySelector("#equ");
 const clear = document.querySelector("#clear");
 
+let newOperationPossible = true;
+let equalsPress = false;
+
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
         if (equalsPress == true) {
@@ -44,10 +47,6 @@ numbers.forEach((number) => {
         display.textContent += number.textContent;
     })
 })
-
-let newOperationPossible = true;
-let equalsPress = false;
-
 
 clear.addEventListener("click", () => {
     display.textContent = "";
@@ -63,11 +62,12 @@ operators.forEach((operation) => {
             equalsPress = false;
         }
     })
-})
+});
 
 result.addEventListener("click", () => {
     let ecuation = display.textContent.split(operator);
-    display.textContent = operate(ecuation[0], ecuation[1], operator);
+    let result = operate(ecuation[0], ecuation[1], operator);
+    display.textContent = result % 1 === 0 ? result : parseFloat(result).toFixed(4).replace(/\.?0+$/, '');
     newOperationPossible = true;
     equalsPress = true;
-})
+});
