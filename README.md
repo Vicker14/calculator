@@ -39,7 +39,3 @@ The CSS file that styles the calculator. It includes:
     ```
 2. Open `index.html` in your browser.
 3. Use the buttons to perform calculations.
-
-## License
-
-This project is licensed under the MIT License.
